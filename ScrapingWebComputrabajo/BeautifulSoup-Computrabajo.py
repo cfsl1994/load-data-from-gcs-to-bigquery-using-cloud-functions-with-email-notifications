@@ -14,7 +14,7 @@ computrabajo = source.find('div', attrs={'class':'gO'})
 
 def handler(event, context):
   get_history_job(computrabajo)
-  print(Trabajo Realizado)
+  print("Trabajo Realizado!!!")
 
   return {
         'headers': {'Content-Type': 'application-json'},
