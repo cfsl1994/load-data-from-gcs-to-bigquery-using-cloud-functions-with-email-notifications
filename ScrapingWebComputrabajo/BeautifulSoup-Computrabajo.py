@@ -1,6 +1,7 @@
 import requests
 import argparse
 from bs4 import BeautifulSoup
+import json
 
 parser = argparse.ArgumentParser()
 parser.add_argument('startwebscraping')
@@ -10,6 +11,17 @@ page = requests.get(startwebscraping)
 
 source = BeautifulSoup(page.content, 'html.parser')
 computrabajo = source.find('div', attrs={'class':'gO'})
+
+def handler(event, context):
+  get_history_job(computrabajo)
+  print(Trabajo Realizado)
+
+  return {
+        'headers': {'Content-Type': 'application-json'},
+        'statusCode': 200,
+        'body': json.dumps({"message": "Lambda Container image invoked!",
+                            "event": event})
+  }
 
 def get_history_job(computrabajo):
   capture = {}
@@ -34,5 +46,3 @@ def get_history_address_locality(computrabajo):
    for clean_job in address:
     capture['Ubicación'] = clean_job.text                                                                                                                                                                                      
    print(capture)'''
-
-get_history_job(computrabajo)
