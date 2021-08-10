@@ -1,6 +1,3 @@
 ### BeautifulSoup-Computrabajo
 
-### How run python?
-
-python3 BeautifulSoup-Computrabajo.py https://www.computrabajo.com.pe/empleos-de-informatica-y-telecom-en-lima?pubdate=1
-
+This is a small data pipeline that works with GCP tools. This it for load data csv to bigquery from gcs
